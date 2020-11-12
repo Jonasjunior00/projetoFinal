@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="App/painelAdm/dist/css/adminlte.min.css">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-color: #26A69A">
   <div class="login-box">
     <div class="login-logo">
       <a href="../../index2.html"><b> Painel Admin </b>LTE</a>
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" class="form-control" placeholder="Senha">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -56,33 +56,19 @@
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">
-                Entrar</button>
+              <button type="submit" class="btn btn-primary btn-block"> Entrar</button>
             </div>
             <!-- /.col -->
           </div>
         </form>
 
-        <div class="social-auth-links text-center mb-3">
-          <p>- OU -</p>
-          <a href="#" class="btn btn-block btn-primary">
-            <i class="fab fa-facebook mr-2"></i>
-            Faça login usando o Facebook
-          </a>
-          <a href="#" class="btn btn-block btn-danger">
-            <i class="fab fa-google-plus mr-2"></i>
-            Faça login usando o Google+
-          </a>
-        </div>
         <!-- /.social-auth-links -->
 
         <p class="mb-1">
-          <a href="forgot-password.html">
-            Esqueci a minha senha</a>
+          <a href="forgot-password.html"> Esqueci a minha senha</a>
         </p>
         <p class="mb-0">
-          <a href="register.html" class="text-center">
-            Registre uma nova Conta</a>
+          <a href="register.html" class="text-center">Registrar Conta</a>
         </p>
       </div>
       <!-- /.login-card-body -->
