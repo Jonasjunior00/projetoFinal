@@ -7,14 +7,13 @@
   <title>AdminLTE 3 | Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="App/painelAdm/plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="App/painelAdm/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="App/painelAdm/dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition login-page">
@@ -25,7 +24,8 @@
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">
+          Faça login para iniciar sua sessão</p>
 
         <form action="../../index3.html" method="post">
           <div class="input-group mb-3">
@@ -49,34 +49,40 @@
               <div class="icheck-primary">
                 <input type="checkbox" id="remember">
                 <label for="remember">
-                  Remember Me
+
+                  Lembre de mim
                 </label>
               </div>
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+              <button type="submit" class="btn btn-primary btn-block">
+                Entrar</button>
             </div>
             <!-- /.col -->
           </div>
         </form>
 
         <div class="social-auth-links text-center mb-3">
-          <p>- OR -</p>
+          <p>- OU -</p>
           <a href="#" class="btn btn-block btn-primary">
-            <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+            <i class="fab fa-facebook mr-2"></i>
+            Faça login usando o Facebook
           </a>
           <a href="#" class="btn btn-block btn-danger">
-            <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+            <i class="fab fa-google-plus mr-2"></i>
+            Faça login usando o Google+
           </a>
         </div>
         <!-- /.social-auth-links -->
 
         <p class="mb-1">
-          <a href="forgot-password.html">I forgot my password</a>
+          <a href="forgot-password.html">
+            Esqueci a minha senha</a>
         </p>
         <p class="mb-0">
-          <a href="register.html" class="text-center">Register a new membership</a>
+          <a href="register.html" class="text-center">
+            Registre uma nova Conta</a>
         </p>
       </div>
       <!-- /.login-card-body -->
