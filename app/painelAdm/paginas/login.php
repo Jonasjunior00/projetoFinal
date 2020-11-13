@@ -9,25 +9,25 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="App/painelAdm/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="app/painelAdm/plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="App/painelAdm/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="app/painelAdm/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="App/painelAdm/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="app/painelAdm/dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition login-page" style="background-color: #26A69A">
   <div class="login-box">
     <div class="login-logo">
-      <a href="../../index2.html"><b> Painel Admin </b>LTE</a>
+      <a href="app/painelAdm/index2.html"><b> Painel Admin </b></a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg">
-          Faça login para iniciar sua sessão</p>
+          <strong>Faça login para iniciar sua sessão</strong></p>
 
-        <form action="../../index3.html" method="post">
+        <form action="cpanel.php?pg=cpanel" method="post">
           <div class="input-group mb-3">
             <input type="email" class="form-control" placeholder="Email">
             <div class="input-group-append">
@@ -78,11 +78,11 @@
   <!-- /.login-box -->
 
   <!-- jQuery -->
-  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <script src="app/painelAdm/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="app/painelAdm/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="../../dist/js/adminlte.min.js"></script>
+  <script src="app/painelAdm/dist/js/adminlte.min.js"></script>
 </body>
 
 </html>
