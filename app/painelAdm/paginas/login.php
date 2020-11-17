@@ -57,7 +57,7 @@
             <!-- /.col -->
             <div class="col-5">
               <button type="submit" class="btn btn-primary btn-block"> Entrar</button>
-              <a href="index.php?pg=inicial" class="btn btn-danger btn-block"> Voltar ao Site</a>
+              <a href="index.php" class="btn btn-danger btn-block"> Voltar ao Site</a>
             </div>
             <!-- /.col -->
           </div>
@@ -66,10 +66,10 @@
         <!-- /.social-auth-links -->
 
         <p class="mb-1">
-          <a href="forgot-password.html"> Esqueci a minha senha</a>
+          <a href="app/painelAdm/forgot-password.html"> Esqueci a minha senha</a>
         </p>
         <p class="mb-0">
-          <a href="register.html" class="text-center">Registrar Conta</a>
+          <a href="app/painelAdm/register.html" class="text-center">Registrar Conta</a>
         </p>
       </div>
       <!-- /.login-card-body -->

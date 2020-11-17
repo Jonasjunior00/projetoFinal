@@ -5,7 +5,10 @@ function VerificaSeLogado()
     $senha = '123456';
 
     if ($_POST['usuario'] == $usuario) {
-        echo 'igual';
+        
+        $_SESSION['usuario'] = $usuario;
+        
+        return true;
     } else {
         echo 'Usuário e senha não existe';
     }

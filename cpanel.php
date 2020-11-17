@@ -13,71 +13,36 @@ if (isset($_SESSION['usuario'])) {
 
     switch ($pg) {
         case 'cpanel':
-            include_once "app/painelAdm/index.php";
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/inicial.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
 
         case 'sair':
+            session_destroy();
+            Header('location:' . $_SERVER['PHP_SELF']);
 
             break;
 
         default:
-            include_once "app/painelAdm/index.php";
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/inicial.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
     }
 } else {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
         if (VerificaSeLogado()) {
-            include_once "app/painelAdm/paginas/login.php";
+            //contruindo a pagina
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/inicial.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
         }
-
-
     } else {
-       include_once "app/painelAdm/paginas/login.php" ;
+        include_once "app/painelAdm/paginas/login.php";
     }
-}     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//$paginas = isset($_GET['pg']);
-// verificando session usuario
-// if (!isset($_SESSION['usuario'])) {
-//     $usuario = 'jonas@gmail.com';
-//     $senha = '123456';
-//     // iniciando session
-//     session_start();
-//     $_SESSION['usuario'] = $usuario ;
-//     $_SESSION['senha'] = $senha ;
-
-//     switch ($_GET['pg']) {
-//         case 'cpanel':
-//             include_once "app/painelAdm/index.php";
-//             break;
-
-//         case 'login':
-//             include_once "app/painelAdm/index.php";
-//             break;
-
-//         default:
-//             break;
-//     }
-// } else {
-//     include_once "app/site/paginas/inicial.php";
-// };
+}
