@@ -1,3 +1,19 @@
+<?php
+$id = isset($_GET['id']);
+
+if ($id) {
+    $id = $_GET['id'];
+    $parametros = array(
+        'id_usuario' => $id
+    );
+    $resultUsuario = new Conexao();
+    $dados = $resultUsuario->consultarBanco('SELECT * FROM usuarios WHERE id_usuario = :id_usuario', $parametros);
+} else {
+    header("Location: ?pg=usuarios-listar");
+}
+
+?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -5,7 +21,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Lista De Usuários</h1>
+                    <h1 class="m-0"> Visualizar Usuários</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -25,20 +41,16 @@
             <div class="container-fluid ">
                 <div class="row">
                     <div class="col-10">
-                        <form action="?pg=usuarios-novo" method="POST">
-                            <div class="form-group">
-                                <label for="usuario"> Nome de usuário</label>
-                                <input type="text" name="nome" class="form-control" autofocus id="usuario" placeholder="Digite seu nome de usuário">
+
+                        <?php foreach ($dados as $dadosUsuarios) { ?>
+                            <div class="jumbotron">
+                                <h4 class="display-3"> Nome de usuário</h4>
+                                <div class="display-4">
+                                    <?php echo $dadosUsuarios['nome']  ?>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="usuario"> Senha</label>
-                                <input type="password" class="form-control" name="senha" id="password" placeholder="Digite sua senha">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary btn-lg" value="Cadastrar">
-                                <a href="?pg=usuarios-listar" type="submit" class="btn btn-danger btn-lg" id="usuario"> Voltar</a>
-                            </div>
-                        </form>
+
+                        <?php } ?>
                     </div>
                 </div>
                 <!-- /.row -->

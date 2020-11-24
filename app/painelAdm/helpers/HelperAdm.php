@@ -6,20 +6,19 @@ SIM= adiciona os valores e inicia a sessao
 NÃo= Usuario e senha não confere*/
 
 function VerificaSeLogado()
-
 {
-    $usuario = trim($_POST['usuario']);
+    $usuario = $_POST['usuario'];
     // criar link conexao
     $resultConexao = new conexao();
 
     $parametros = array(
-        ':usuario' => $usuario,
+        ':usuario' => $usuario
     );
 
     $resultadoConsulta = $resultConexao->consultarBanco('SELECT * FROM usuarios WHERE nome = :usuario', $parametros);
 
 
-    if (count($resultadoConsulta) > 0) {
+    if (count($resultadoConsulta)) {
         //adiciona sessão 
 
         $_SESSION['usuario'] = $usuario;
@@ -42,7 +41,6 @@ function inserirUsuario()
     );
 
     $resultDados = new Conexao();
-    $resultDados->intervencaoNoBanco('INSERT INTO usuarios(nome,senha) VALUES (:nome,:senha)', $parametros);
-
+    $resultDados->intervencaoNoBanco('INSERT INTO usuarios(nome, senha) VALUES (:nome, :senha)', $parametros);
     include_once "app/painelAdm/paginas/usuarios-listar.php";
 }
