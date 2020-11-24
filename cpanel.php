@@ -15,15 +15,66 @@ if (isset($_SESSION['usuario'])) {
         case 'cpanel':
             include_once "app/painelAdm/paginas/includes/header.php";
             include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+        case 'inicial':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
             include_once "app/painelAdm/paginas/inicial.php";
             include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
+        case 'produtos':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/produtos.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+        case 'servicos':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/servicos.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+        case 'contato':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/contato.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+
 
         case 'sair':
             session_destroy();
             Header('location:' . $_SERVER['PHP_SELF']);
 
             break;
+
+            /*********** crud ***************/
+
+        case 'usuarios-form':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/usuarios-form.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+
+
+        case 'usuarios-listar':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/usuarios-listar.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+
+        case 'usuarios-novo':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            //função criar usuario
+            inserirUsuario();
+            include_once "app/painelAdm/paginas/usuarios-novo.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+
 
         default:
             include_once "app/painelAdm/paginas/includes/header.php";

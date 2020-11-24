@@ -8,7 +8,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="app/painelAdm/index3.php" class="nav-link">Inicio</a>
+                <a href="app/painelAdm/index.php" class="nav-link">Inicio</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">Contato</a>
@@ -168,21 +168,33 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
 
-                                <a href="app/painelAdm/index.php" class="nav-link active">
+                                <a href="cpanel.php?pg=inicial" class="nav-link active">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p> Inicial </p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="app/painelAdm/index2.php" class="nav-link">
+                                <a href="cpanel.php?pg=produtos" class="nav-link">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p> Produtos</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="app/painelAdm/index3.php" class="nav-link">
+                                <a href="cpanel.php?pg=servicos" class="nav-link">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p> Serviços</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="cpanel.php?pg=contato" class="nav-link">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p> Contato</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="cpanel.php?pg=usuarios-listar" class="nav-link">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p> Lista de usuarios</p>
                                 </a>
                             </li>
 
