@@ -59,7 +59,7 @@ $dados = $resultDados->consultarBanco('SELECT * FROM usuarios');
 
                                                 <td class="text-center">
                                                     <a href="?pg=usuarios-visualizar&id=<?php echo $DadosUsuarios['id_usuario'] ?>" class="btn btn-success"><span class="fas fa-eye" class="regi-eye"></span></a>
-                                                    <a href="?pg=usuario-editar&id=<?php echo $DadosUsuarios['id_usuario'] ?>" class="btn btn-warning"><span class="fas fa-pen" class="regi-eye"></span></a>
+                                                    <a href="?pg=usuarios-editar&id=<?php echo $DadosUsuarios['id_usuario'] ?>" class="btn btn-warning"><span class="fas fa-pen" class="regi-eye"></span></a>
                                                     <a href="?pg=usuario-apagar&id=<?php echo $DadosUsuarios['id_usuario'] ?>" class="btn btn-danger"><span class="fas fa-trash" class="regi-eye"></span></a>
 
                                                 </td>

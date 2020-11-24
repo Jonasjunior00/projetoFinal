@@ -78,8 +78,24 @@ if (isset($_SESSION['usuario'])) {
         case 'usuarios-visualizar':
             include_once "app/painelAdm/paginas/includes/header.php";
             include_once "app/painelAdm/paginas/includes/navegacao.php";
-            include_once "app/painelAdm/paginas/usuarios-visualizar.php";         
+            include_once "app/painelAdm/paginas/usuarios-visualizar.php";
             include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+
+        case 'usuarios-editar':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            if ($_REQUEST['REQUEST_METHOD'] == 'POST') {
+                //função de atualização de usuario
+                atualizarUsuario();
+                
+            } else {
+                echo 'mostrar usuário pelo id';
+            }
+
+            include_once "app/painelAdm/paginas/usuarios-editar.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+
             break;
 
         case 'usuario-apagar':
