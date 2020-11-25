@@ -85,17 +85,23 @@ if (isset($_SESSION['usuario'])) {
         case 'usuarios-editar':
             include_once "app/painelAdm/paginas/includes/header.php";
             include_once "app/painelAdm/paginas/includes/navegacao.php";
-            if ($_REQUEST['REQUEST_METHOD'] == 'POST') {
+
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 //função de atualização de usuario
                 atualizarUsuario();
-                
-            } else {
-                echo 'mostrar usuário pelo id';
+            } else { 
+
+                $IdUsuarioEditar = isset($_GET['id']);
+
+                if ($IdUsuarioEditar) {
+                    $DadosUsuario = visualizarUsuario($IdUsuarioEditar);
+                    include_once "app/painelAdm/paginas/usuarios-editar.php";
+                } else {
+                    Header('Location: ?pg=usuarios-listar');
+                }
             }
 
-            include_once "app/painelAdm/paginas/usuarios-editar.php";
             include_once "app/painelAdm/paginas/includes/rodape.php";
-
             break;
 
         case 'usuario-apagar':

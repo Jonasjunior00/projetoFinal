@@ -25,20 +25,28 @@
             <div class="container-fluid ">
                 <div class="row">
                     <div class="col-10">
-                        <form action="?pg=usuarios-novo" method="POST">
-                            <div class="form-group">
-                                <label for="usuario"> Nome de usuário</label>
-                                <input type="text" name="nome" class="form-control" autofocus id="usuario" placeholder="Digite seu nome de usuário">
-                            </div>
-                            <div class="form-group">
-                                <label for="usuario"> Senha</label>
-                                <input type="password" class="form-control" name="senha" id="password" placeholder="Digite sua senha">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary btn-lg" value="Atualizar">
-                                <a href="?pg=usuarios-listar" type="submit" class="btn btn-danger btn-lg" id="usuario"> Voltar</a>
-                            </div>
-                        </form>
+
+                        <?php foreach ($DadosUsuario as $dados) { ?>
+
+                            <form action="?pg=usuarios-editar" method="POST">
+                                <div class="form-group">
+                                    <label for="usuario"> Nome de usuário</label>
+                                    <input type="text" name="nome" value="<?php echo $dados['nome'] ?>" class="form-control" disabled id="usuario">
+                                </div>
+                                <div class="form-group">
+                                    <label for="usuario"> Senha</label>
+                                    <input type="password" class="form-control" autofocus name="senha" id="password" placeholder="Digite sua senha">
+                                </div>
+                                <input type="hidden" name="id_usuario" value="<?php echo $dados['id_usuario'] ?>">
+                                <div class="form-group">
+                                    <a href="?pg=usuarios-listar" type="submit" class="btn btn-danger btn-lg" id="usuario"> Voltar</a>
+                                    <input type="submit" class="btn btn-primary btn-lg" value="Atualizar">
+
+                                </div>
+
+                            </form>
+                        <?php } ?>
+
                     </div>
                 </div>
                 <!-- /.row -->

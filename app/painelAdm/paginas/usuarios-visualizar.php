@@ -48,6 +48,7 @@ if ($id) {
                                 <div class="display-4">
                                     <?php echo $dadosUsuarios['nome']  ?>
                                 </div>
+                                <a href="?pg=usuarios-listar" type="submit" class="btn btn-danger btn-lg"> Voltar</a>
                             </div>
 
                         <?php } ?>
