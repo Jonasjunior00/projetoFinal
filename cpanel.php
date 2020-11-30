@@ -124,6 +124,8 @@ if (isset($_SESSION['usuario'])) {
             break;
     }
 } else {
+    $erro;
+    // verifica se foi submetido um metodo post
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (VerificaSeLogado()) {

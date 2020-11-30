@@ -1,9 +1,6 @@
 <?php
 include_once 'app/painelAdm/helpers/conexao.php';
-/* futuramente vira do banco de dados
-verificar se existe um usuario no bando 
-SIM= adiciona os valores e inicia a sessao
-NÃo= Usuario e senha não confere*/
+
 
 function VerificaSeLogado()
 {
@@ -23,23 +20,34 @@ function VerificaSeLogado()
             $_SESSION['usuario'] = $usuario;
             return true;
         } else {
-            echo 'a senha não confere';
-            return false;
+            $erro = 'Usuário e senha invalidos';
+            include_once 'app/painelAdm/paginas/login.php';
         }
     } else {
-        //usuario e senha não confere
-        echo 'usuario e senha não confere';
+        $erro = 'Usuário e senha invalidos';
+        include_once 'app/painelAdm/paginas/login.php';
     }
 }
 
 
 function inserirUsuario()
 {
+//echo '<pre>';
+//print_r($_FILES);
+//die();
 
-    // pegando as variaveis por post
+
+   // pegando as variaveis por post
     $nome = trim($_POST['nome']);
     $senha = trim($_POST['senha']);
 
+    //pegando a imagem
+    $img_usuario = $_FILES['img_usuario'];
+
+    move_uploaded_file($_FILES['img_usuario']['tmp_name'],'app/painelAdm/assets/img/'.$_FILES['img_usuario']['name']);
+ die('Upload Finalizado com Sucesso');
+
+    //validando as variáveis e encriptografando a senha
     $parametros = array(
         ':nome' => $nome,
         ':senha' => password_hash($senha, PASSWORD_DEFAULT)
@@ -69,7 +77,9 @@ function atualizarUsuario()
     //atualizando no banco
     $atualizarUsuario = new Conexao();
     $atualizarUsuario->intervencaoNoBanco(
-        'UPDATE  usuarios SET senha = :senha WHERE id_usuario = :id_usuario', $parametros);
+        'UPDATE  usuarios SET senha = :senha WHERE id_usuario = :id_usuario',
+        $parametros
+    );
 
     include_once "app/painelAdm/paginas/usuarios-listar.php";
 }
@@ -93,3 +103,21 @@ function visualizarUsuario($id)
         }
     }
 }
+
+/*
+  //função visualizar mensagem
+function visualisarMsg()
+{
+    
+$idcontato = $_GET['id'];
+
+$parametros = array(
+    'visualizar' => 1,
+    'id_contato' = $idcontato
+
+);
+$resultadoConsulta = new conexao();
+$dados = $resultUsuarioConsulta=>intervencaoNoBanco('UPDATE usuarios SET visualizar = :visualizar WHERE id_contato = :id_contato', $parametros );
+}
+*/
+

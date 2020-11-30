@@ -25,7 +25,7 @@
             <div class="container-fluid ">
                 <div class="row">
                     <div class="col-10">
-                        <form action="?pg=usuarios-novo" method="POST">
+                        <form action="?pg=usuarios-novo" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="usuario"> Nome de usuário</label>
                                 <input type="text" name="nome" class="form-control" autofocus id="usuario" placeholder="Digite seu nome de usuário">
@@ -33,6 +33,9 @@
                             <div class="form-group">
                                 <label for="usuario"> Senha</label>
                                 <input type="password" class="form-control" name="senha" id="password" placeholder="Digite sua senha">
+                            </div>
+                            <div class="form-group">
+                                <input type="file" name="img_usuario">
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-lg" value="Cadastrar">

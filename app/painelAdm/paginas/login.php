@@ -21,11 +21,18 @@
     <div class="login-logo">
       <a href="app/painelAdm/index2.html"><b> Painel Admin </b></a>
     </div>
+
+
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg">
           <strong>Faça login para iniciar sua sessão</strong></p>
+
+
+        <?php if (isset($erro)) { ?>
+          <div class="alert alert-danger" id="erro"> <?php echo $erro; ?></div>
+        <?php } ?>
 
         <form action="cpanel.php?pg=cpanel" method="post">
           <div class="input-group mb-3">
@@ -83,6 +90,9 @@
   <script src="app/painelAdm/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="app/painelAdm/dist/js/adminlte.min.js"></script>
+  
+  <script src="app/assets/js/funcoes.js"></script>
 </body>
 
 </html>
+

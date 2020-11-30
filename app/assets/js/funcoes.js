@@ -1,1 +1,1 @@
-// Funções
+$('#erro').delay(2000).fadeOut();
