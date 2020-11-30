@@ -1,6 +1,6 @@
 <?php
 $resultDados = new Conexao();
-$dados = $resultDados->consultarBanco('SELECT * FROM usuarios');
+$dados = $resultDados->consultarBanco('SELECT * FROM usuarios ');
 ?>
 
 <!-- Content Wrapper. Contains page content -->

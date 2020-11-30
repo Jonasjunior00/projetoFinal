@@ -90,9 +90,8 @@
   <script src="app/painelAdm/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="app/painelAdm/dist/js/adminlte.min.js"></script>
-  
+
   <script src="app/assets/js/funcoes.js"></script>
 </body>
 
 </html>
-
