@@ -71,7 +71,7 @@ if (isset($_SESSION['usuario'])) {
             include_once "app/painelAdm/paginas/includes/navegacao.php";
             //função criar usuario
             inserirUsuario();
-            include_once "app/painelAdm/paginas/usuarios-novo.php";
+            include_once "app/painelAdm/paginas/usuarios-listar.php";
             include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
 

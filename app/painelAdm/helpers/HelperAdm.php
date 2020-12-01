@@ -32,35 +32,31 @@ function VerificaSeLogado()
 
 function inserirUsuario()
 {
-//echo '<pre>';
-//print_r($_FILES);
-//die();
-
-
-   // pegando as variaveis por post
+    // pegando as variaveis por post
     $nome = trim($_POST['nome']);
     $senha = trim($_POST['senha']);
 
-    //pegando a imagem
-  //  $img_usuario = $_FILES['img_usuario'];
 
-   move_uploaded_file($_FILES['img_usuario']['tmp_name'],'app/painelAdm/assets/img/' . $_FILES['img_usuario']['name']);
- //die('Upload Finalizado com Sucesso');
+    //inserindo a imagem
+    move_uploaded_file(
+        $_FILES['img_usuario']['tmp_name'],
+        'app/painelAdm/assets/img/' . $_FILES['img_usuario']['name']
+    );
+
 
     //validando as variáveis e encriptografando a senha
     $parametros = array(
         ':nome' => $nome,
         ':senha' => password_hash($senha, PASSWORD_DEFAULT),
         ':img_usuario' => ($_FILES['img_usuario']['name'] == true) ?
-         'app/painemAdmin/assets/img/' . $_FILES['img_usuario']['name'] :
-          'app/painelAdmin/assets/img/anonimous.jpg'  
+            'app/painemAdmin/assets/img/' . $_FILES['img_usuario']['name'] :
+            'app/painelAdmin/assets/img/anonimous.jpg'
 
     );
 
     $resultDados = new Conexao();
     $resultDados->intervencaoNoBanco('INSERT INTO usuarios(nome, senha, img) VALUES (:nome, :senha, :img_usuario)', $parametros);
     include_once "app/painelAdm/paginas/usuarios-listar.php";
-
 }
 function atualizarUsuario()
 {
@@ -68,9 +64,6 @@ function atualizarUsuario()
     $idUsuario = trim($_POST['id_usuario']);
     $senha = trim($_POST['senha']);
 
-    // echo $idUsuario."|";
-    // echo $senha;
-    // die();
 
     //validando as variáveis
     $parametros = array(
@@ -107,21 +100,18 @@ function visualizarUsuario($id)
         }
     }
 }
-
-
-  //função visualizar mensagem
+   //função visualizar mensagem
 function visualizarMsg()
 {
-    
-$idcontato = $_GET['id'];
 
-$parametros = array(
-    'visualizar' => 1,
-    'id_contato' => $idcontato
+    $idcontato = $_GET['id'];
 
-);
- $resultUsuarioConsulta = new conexao();
- $dados = $resultUsuarioConsulta->intervencaoNoBanco('UPDATE usuarios SET visualizar = :visualizar WHERE id_contato = :id_contato', $parametros );
+    $parametros = array(
+        'visualizar' => 1,
+        'id_contato' => $idcontato
+
+    );
+    $resultUsuarioConsulta = new conexao();
+    $dados = $resultUsuarioConsulta->intervencaoNoBanco('UPDATE usuarios SET visualizar = 
+    :visualizar WHERE id_contato = :id_contato', $parametros);
 }
-
-

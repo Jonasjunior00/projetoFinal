@@ -41,86 +41,106 @@
                                             <th>O que deseja fazer</th>
                                         </tr>
                                     </thead>
+
                                     <tbody>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 4.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td> 4</td>
-                                            <td>
+                                        <?php foreach ($dados as $Dadosusuarios) { ?>
 
-                                                <a class="btn btn-success" type="submit">
-                                                    <i class="fas fa-eye"></i>
-                                                </a> 
+                                            <td><?php echo $Dadosusuarios['id_contato'] ?></td>
+                                            <td><?php echo $Dadosusuarios['nome'] ?></td>
+                                            <td><?php echo $Dadosusuarios['email'] ?></td>
+                                            <td><?php echo $Dadosusuarios['msg'] ?></td>
+                                            <td><?php echo $Dadosusuarios['cat'] ?></td>
+                                            <td><?php echo $Dadosusuarios['dataCriacao'] ?></td>
+                                            <td><?php echo $Dadosusuarios['dataAtualizacao'] ?></td>
 
-                                                <a class="btn btn-warning" type="submit">
-                                                    <i class="fas fa-pen"></i>
-                                                </a> 
-                                                <a class="btn btn-danger" type="submit">
-                                                    <i class="fas fa-trash"></i>
-                                                </a> 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 5.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td>5</td>
-                                            <td>     <a class="btn btn-success" type="submit">
-                                                    <i class="fas fa-eye"></i>
-                                                </a> 
+                                            <a href="?pg=visualizar-contato&id=<?php echo $Dadosusuarios['id_contato'] ?>" class="btn <?php echo ($Dadosusuarios['visualizar'] == 1) ? "btn-warning" : "btn-success"; ?>" type="submit">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="?pg=contato_apagar&id=<?php echo $Dadosusuarios['id_contato'] ?>" class="btn btn-danger" type="submit">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        <?php } ?>
 
-                                                <a class="btn btn-warning" type="submit">
-                                                    <i class="fas fa-pen"></i>
-                                                </a> 
-                                                <a class="btn btn-danger" type="submit">
-                                                    <i class="fas fa-trash"></i>
-                                                </a> 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 5.5
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td>5.5</td>
-                                            <td>     <a class="btn btn-success" type="submit">
-                                                    <i class="fas fa-eye"></i>
-                                                </a> 
+                                    </tbody>
+                                    <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 4.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td> 4</td>
+                                        <td>
 
-                                                <a class="btn btn-warning" type="submit">
-                                                    <i class="fas fa-pen"></i>
-                                                </a> 
-                                                <a class="btn btn-danger" type="submit">
-                                                    <i class="fas fa-trash"></i>
-                                                </a> 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 6
-                                            </td>
-                                            <td>Win 98+</td>
-                                            <td>6</td>
-                                            <td>     <a class="btn btn-success" type="submit">
-                                                    <i class="fas fa-eye"></i>
-                                                </a> 
+                                            <a class="btn btn-success" type="submit">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
 
-                                                <a class="btn btn-warning" type="submit">
-                                                    <i class="fas fa-pen"></i>
-                                                </a> 
-                                                <a class="btn btn-danger" type="submit">
-                                                    <i class="fas fa-trash"></i>
-                                                </a> 
-                                            </td>
-                                        </tr>
-                                      
+                                            <a class="btn btn-warning" type="submit">
+                                                <i class="fas fa-pen"></i>
+                                            </a>
+                                            <a class="btn btn-danger" type="submit">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td>5</td>
+                                        <td> <a class="btn btn-success" type="submit">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+
+                                            <a class="btn btn-warning" type="submit">
+                                                <i class="fas fa-pen"></i>
+                                            </a>
+                                            <a class="btn btn-danger" type="submit">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 5.5
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td>5.5</td>
+                                        <td> <a class="btn btn-success" type="submit">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+
+                                            <a class="btn btn-warning" type="submit">
+                                                <i class="fas fa-pen"></i>
+                                            </a>
+                                            <a class="btn btn-danger" type="submit">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trident</td>
+                                        <td>Internet
+                                            Explorer 6
+                                        </td>
+                                        <td>Win 98+</td>
+                                        <td>6</td>
+                                        <td> <a class="btn btn-success" type="submit">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+
+                                            <a class="btn btn-warning" type="submit">
+                                                <i class="fas fa-pen"></i>
+                                            </a>
+                                            <a class="btn btn-danger" type="submit">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
 
                                     </tfoot>
                                 </table>
@@ -128,7 +148,7 @@
                             <!-- /.card-body -->
                         </div>
                         <!-- /.card -->
-                     
+
                         <!-- /.card -->
                     </div>
                     <!-- /.col -->

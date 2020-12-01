@@ -38,8 +38,8 @@
                                 <input type="file" name="img_usuario">
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary btn-lg" value="Cadastrar">
                                 <a href="?pg=usuarios-listar" type="submit" class="btn btn-danger btn-lg" id="usuario"> Voltar</a>
+                                <input type="submit" class="btn btn-primary btn-lg" value="Cadastrar">
                             </div>
                         </form>
                     </div>
