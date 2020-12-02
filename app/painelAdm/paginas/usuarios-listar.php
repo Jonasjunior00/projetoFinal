@@ -1,6 +1,6 @@
 <?php
 $resultDados = new Conexao();
-$dados = $resultDados->consultarBanco('SELECT * FROM usuarios ');
+$dados = $resultDados->consultarBanco('SELECT * FROM usuarios');
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -52,7 +52,7 @@ $dados = $resultDados->consultarBanco('SELECT * FROM usuarios ');
                                     <tbody>
                                         <?php foreach ($dados as $DadosUsuarios) { ?>
                                             <tr>
-                                                <td style="width: 20px;">
+                                                <td style="width: 30px;">
                                                     <img src="<?php echo $DadosUsuarios['img'] ?>" alt="">
                                                 </td>
                                                 <td><?php echo $DadosUsuarios['nome'] ?></td>

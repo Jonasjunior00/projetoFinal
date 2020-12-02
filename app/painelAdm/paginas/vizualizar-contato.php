@@ -10,15 +10,12 @@ if ($id) {
 
   $resultUsuario = new Conexao();
 
-  $dados = $resultUsuario->consultarBanco(
-    'SELECT * FROM contato WHERE id_contato = :id_contato',
-    $parametros
-  );
+  $dados = $resultUsuario->consultarBanco('SELECT * FROM contato WHERE id_contato = :id_contato',$parametros);
 
   visualizarMsg();
 
 } else {
-  header("Location: ?pg=servicos");
+  header("Location: ?pg=contatos");
 }
 
 

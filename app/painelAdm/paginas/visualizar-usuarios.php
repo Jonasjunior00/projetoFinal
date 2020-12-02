@@ -42,15 +42,23 @@ if ($id) {
                 <div class="row">
                     <div class="col-10">
 
-                        <?php foreach ($dados as $dadosUsuarios) { ?>
-                            <div class="jumbotron">
-                                <h4 class="display-3"> Nome de usuário</h4>
-                                <div class="display-4">
-                                    <?php echo $dadosUsuarios['nome']  ?>
+                        <?php foreach ($dados as $DadosUsuarios) { ?>
+                            <form action="?pg=usuarios-novo" method="POST">
+                                <div class="jumbotron">
+                                    <h4 class="display-3"> Nome de usuário</h4>
+                                    <div class="lead">
+                                        <h5>Nome:</h5>
+                                        <?php echo $DadosUsuarios['nome'] ?>
+                                        <h5>Data criação:</h5>
+                                        <?php echo $DadosUsuarios['dataCriacao'] ?>
+                                        <h5>Data Atualização:</h5>
+                                        <?php echo $DadosUsuarios['dataAtualizacao'] ?>
+                                    </div>
+                                    <div class="form-group"> 
+                                        <a href="?pg=usuarios-listar" type="submit" class="btn btn-danger btn-lg"> Voltar</a>
+                                    </div>
                                 </div>
-                                <a href="?pg=usuarios-listar" type="submit" class="btn btn-danger btn-lg"> Voltar</a>
-                            </div>
-
+                            </form>
                         <?php } ?>
                     </div>
                 </div>

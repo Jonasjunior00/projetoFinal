@@ -71,14 +71,21 @@ if (isset($_SESSION['usuario'])) {
             include_once "app/painelAdm/paginas/includes/navegacao.php";
             //função criar usuario
             inserirUsuario();
-            include_once "app/painelAdm/paginas/usuarios-listar.php";
+            include_once "app/painelAdm/paginas/usuarios-novo.php";
             include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
 
-        case 'usuarios-visualizar':
+        case 'visualizar-usuarios':
             include_once "app/painelAdm/paginas/includes/header.php";
             include_once "app/painelAdm/paginas/includes/navegacao.php";
-            include_once "app/painelAdm/paginas/usuarios-visualizar.php";
+            include_once "app/painelAdm/paginas/visualizar-usuarios.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+            
+        case 'contato':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/contato.php";
             include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
 
@@ -89,7 +96,7 @@ if (isset($_SESSION['usuario'])) {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 //função de atualização de usuario
                 atualizarUsuario();
-            } else { 
+            } else {
 
                 $IdUsuarioEditar = isset($_GET['id']);
 
@@ -101,6 +108,7 @@ if (isset($_SESSION['usuario'])) {
                 }
             }
 
+            include_once "app/painelAdm/paginas/usuarios-visualizar.php";
             include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
 
@@ -115,6 +123,22 @@ if (isset($_SESSION['usuario'])) {
             Header('Location: ?pg=usuarios-listar');
             break;
 
+
+        case 'visualizar-contato':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/visualizar-contato.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+
+        case 'contato-apagar':
+            $parametros = array(
+                'id_contato' => $_GET['id']
+            );
+            $apagarContato = new Conexao();
+            $apagarContato->intervencaoNoBanco('DELETE FROM usuarios WHERE id_contato = :id_contato', $parametros);
+            header('Location: ?pg=contato');
+            break;
 
         default:
             include_once "app/painelAdm/paginas/includes/header.php";

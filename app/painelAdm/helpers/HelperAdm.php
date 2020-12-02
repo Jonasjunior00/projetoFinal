@@ -38,18 +38,17 @@ function inserirUsuario()
 
 
     //inserindo a imagem
-    move_uploaded_file(
-        $_FILES['img_usuario']['tmp_name'],
-        'app/painelAdm/assets/img/' . $_FILES['img_usuario']['name']
+    move_uploaded_file($_FILES['img_usuario']['tmp_name'],
+        'app/painelAdm/assets/img/' .$_FILES['img_usuario']['name']
     );
-
+    $img_usuario = $_FILES['img_usuario'];
 
     //validando as variáveis e encriptografando a senha
     $parametros = array(
         ':nome' => $nome,
         ':senha' => password_hash($senha, PASSWORD_DEFAULT),
         ':img_usuario' => ($_FILES['img_usuario']['name'] == true) ?
-            'app/painemAdmin/assets/img/' . $_FILES['img_usuario']['name'] :
+            'app/painemAdmin/assets/img/' .$_FILES['img_usuario']['name'] :
             'app/painelAdmin/assets/img/anonimous.jpg'
 
     );
@@ -111,6 +110,7 @@ function visualizarMsg()
         'id_contato' => $idcontato
 
     );
+
     $resultUsuarioConsulta = new conexao();
     $dados = $resultUsuarioConsulta->intervencaoNoBanco('UPDATE usuarios SET visualizar = 
     :visualizar WHERE id_contato = :id_contato', $parametros);

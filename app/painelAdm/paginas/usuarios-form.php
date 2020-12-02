@@ -1,3 +1,9 @@
+<?php  
+$resultDados = new Conexao();
+$dados = $resultDados->consultarBanco('SELECT * FROM usuarios');
+
+?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

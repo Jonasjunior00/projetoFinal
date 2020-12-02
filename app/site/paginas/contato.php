@@ -3,7 +3,7 @@
 <div class="container mb-0">
     <div class="col-6 offset-3 mb-5">
 
-        <form action="?pg=card_mensagem" method="POST">
+        <form action="?pg=cad_mensagem" method="POST">
 
             <div class="form-group">
                 <label for="inputEmail4"> Nome</label>
